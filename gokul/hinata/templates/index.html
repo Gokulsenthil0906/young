@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YoungDevops</title>
+</head>
+
+<body>
+  {% csrf_token %}
+  <header>
+    <nav>
+      <h3 id="name">YoungDevops</h3>
+      <ol>
+        <li>Home</li>
+        <li>Service</li>
+        <li>About Us</li>
+        <li>Contact US</li>
+      </ol>
+    </nav>
+  </header>
+  <main>
+    <div id="Home">
+      <img src="" alt="main_image" />
+    </div>
+    <div id="service">
+      <section id="software">
+        <h1>Software Service</h1>
+        <p>
+        <blockquote>
+          <q>
+            Learning to Write programs strectches your mind and helps you think better .It creates a way of
+            thinking about things that I think is helpful in all domains.
+          </q>
+        </blockquote> - Bill Gates </p>
+        <button>Contact</button>
+      </section>
+      <section id="business">
+        <h1>Business Intelligence</h1>
+        <p>
+        <blockquote>
+          <q>
+            The goal of business intelligence is to turn data into information, and information into
+            insight.
+          </q>
+          -Carly Fiorina
+        </blockquote>
+        </p>
+        <button>Contact</button>
+      </section>
+      <section id="appmaintance">
+        <h1>Application Maintenance And Support</h1>
+        <p>
+        <blockquote>
+          <q>
+            Application Maintenance is like taking care of your car. Regular maintenance keeps it running
+            smoothly and prevents expensive breakdowns
+          </q>
+        </blockquote> -Gokulraj.S(coo)
+        </p>
+        <button>Contact</button>
+      </section>
+      <section>
+        <footer>
+          "Customer service shouldn't just be a department, it should be the entire company." - Tony Hsieh"
+        </footer>
+      </section>
+    </div>
+    <div className="about" id="aboutus">
+      <p>
+        <b>
+          We're a crew of passionate college students fueled by tech and fueled by coffee. We bring the latest
+          knowledge and a can-do attitude to tackle your IT challenges. Think of us as the future of IT, here
+          to solve your problems today.
+        </b>
+      </p>
+      <button>Collaborative: Let's create this service together!</button>
+    </div>
+    <div className="contact" id="contact">
+      <center>
+        <h1>Contact Us</h1>
+      </center>
+      <form  method="post">
+        {% csrf_token %}
+        <input type="text" name="text" id="text" placeholder="Name" required/>
+        <input type="email" name="email" id="email" placeholder="Email" required />
+        <input type="tel" name="tel" id="tel" placeholder="Phone" required/>
+        <input type="text" name="orgname" id="orgname" placeholder="Name of the Organization" required/>
+        <select name="service" id="serviceneed" required>
+          <!-- <h6>Type of Service Needed</h6> -->
+          <option value="Type of Service Needed">Type of Service Needed
+
+          </option>
+          <option value="Software Service">Software service</option>
+          <option value="Business Intelligence">Business Intelligence</option>
+          <option value="Application Maintenance And Support">Application Maintenance And Support</option>
+        </select>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </main>
+  <hr />
+  <footer>
+    <address>
+      &copy; 2024 YoungDevops
+      <p><a href="mailto:youngdevops@yahoo.com">youngdevops@yahoo.com</a></p>
+      <p><a href="tel:+91 9025815749">9025815749</a></p>
+      <input type="email" name="" id="" placeholder="Email" />
+    </address>
+  </footer>
+</body>
+<style>
+  /* Basic reset styles */
+body,
+h1,
+h2,
+h3,
+p,
+ol,
+ul,
+li,
+button,
+input,
+select,
+footer,
+address {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set up body styles */
+body {
+  font-family: sans-serif;
+}
+
+/* Header styling */
+header {
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#name {
+  font-size: 2em;
+  transition: color 0.5s ease-in-out;
+}
+
+nav:hover #name {
+  color: #007bff;
+}
+
+nav ol {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+}
+
+nav li:hover a {
+  color: #007bff;
+}
+
+/* Main section styling */
+main {
+  padding: 40px;
+}
+
+#Home,
+#service,
+#aboutus,
+#contact {
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#Home:hover,
+#service:hover,
+#aboutus:hover,
+#contact:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#Home img {
+  width: 100%;
+  height: auto;
+}
+
+/* Service section styling */
+#service section {
+  margin-bottom: 20px;
+}
+
+#service h1,
+#aboutus h1,
+#contact h1 {
+  margin-bottom: 10px;
+}
+
+blockquote {
+  border-left: 5px solid #eee;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #0062cc;
+}
+
+/* About Us section styling */
+#aboutus p {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+/* Contact section styling */
+#contact form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#contact input,
+#contact select {
+  width: 45%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#contact input[type="submit"] {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 15px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#contact input[type="submit"]:hover {
+  background-color: #0062cc;
+}
+
+/* Footer styling */
+footer {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin-bottom: 5px;
+}
+
+footer input {
+  display: none;
+}
+
+</style>
+</html>
